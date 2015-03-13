@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dhis_live_conf>
+ <databases selected="1">
+    <database name="Production DB" id="1">
+        <driverClass>org.hibernate.dialect.PostgreSQLDialect</driverClass>
+        <url>jdbc:postgresql://127.0.0.1:5432/dhis2_zm_prod2
+        <username>postgres</username>
+        <password>postgres</password>
+    </database>
+        <database name="Test DB" id="1">
+        <driverClass>org.hibernate.dialect.PostgreSQLDialect</driverClass>
+        <url>jdbc:postgresql://127.0.0.1:5432/dhis2_zm_test
+        <username>postgres</username>
+        <password>postgres</password>
+        <options>
+        	<option>
+        		<type>hibernate.hbm2ddl.auto</type>
+        		<value>update</value>
+        	</option>
+        </options>
+    </database>
+    <browsers selected="1">
+    	<browser name= "Firefox" id="1">
+    		<name>Firefox</name>
+    		<path>/usr/share/bin/firefox</path>
+    	</browser>
+    </browsers>
+ </databases>
+</dhis_live_conf>
