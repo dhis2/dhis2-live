@@ -48,14 +48,12 @@ To exit - right click the icon and select Exit.
 A sample `hibernate.properties` configured for H2 looks like this:
 
 ```
---------------------------------------------------------------------
 hibernate.dialect = org.hisp.dhis.dialect.H2Dialect
 hibernate.connection.driver_class = org.h2.Driver
 hibernate.connection.url = jdbc:h2:./database/dhis2;AUTO_SERVER=TRUE
 hibernate.connection.username = sa
 hibernate.connection.password =
 hibernate.hbm2ddl.auto = update
---------------------------------------------------------------------
 ```
 
 The default port that the embedded jetty server listens on is `8080`.  If this
