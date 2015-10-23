@@ -58,8 +58,8 @@
                 <version>2.0.2</version>
                 <configuration>
                     <debug>true</debug>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 	  
@@ -93,7 +93,7 @@
                                 <windowTitle></windowTitle>
                             </singleInstance>
                             <jre>
-                                <minVersion>1.6.0_14</minVersion>
+                                <minVersion>1.8.0</minVersion>
                             </jre>
                             <splash>
                                 <file>${basedir}/util/launch4j/dhis2-splash.bmp</file>
@@ -112,7 +112,7 @@
                         <configuration>
                             <dontWrapJar>true</dontWrapJar>
                             <headerType>gui</headerType>
-                            <outfile>${project.build.directory}/dhis2-live-embedded.exe</outfile>
+                            <outfile>${project.build.directory}/dhis2-live-embedded-jre.exe</outfile>
                             <jar>dhis2-live.jar</jar>
                             <errTitle>dhis2</errTitle>
                             <priority>normal</priority>
@@ -128,7 +128,7 @@
                             </singleInstance>
                             <jre>
                                 <path>jre6</path>
-                                <minVersion>1.6.0_14</minVersion>
+                                <minVersion>1.8.0</minVersion>
                             </jre>
                             <splash>
                                 <file>${basedir}/util/launch4j/dhis2-splash.bmp</file>
