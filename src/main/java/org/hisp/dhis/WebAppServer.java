@@ -52,7 +52,7 @@ public class WebAppServer extends Thread {
 
     public static final int DEFAULT_JETTY_PORT = 8080;
 
-    public static int MAX_FORM_CONTENT_SIZE = 5000000;
+    public static int MAX_FORM_CONTENT_SIZE = 200000000;
 
     private static final Log log = LogFactory.getLog(WebAppServer.class);
 
