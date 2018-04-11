@@ -44,64 +44,74 @@ import org.eclipse.jetty.webapp.WebAppContext;
 /**
  * @author Bob Jolliffe
  */
-public class WebAppServer extends Thread {
-
+public class WebAppServer
+    extends
+    Thread
+{
     public static final String DHIS_DIR = "/webapps/dhis";
-
     public static final String JETTY_PORT_CONF = "/conf/jetty.port";
-
     public static final int DEFAULT_JETTY_PORT = 8080;
-
     public static int MAX_FORM_CONTENT_SIZE = 200000000;
 
-    private static final Log log = LogFactory.getLog(WebAppServer.class);
+    private static final Log log = LogFactory.getLog( WebAppServer.class );
 
     protected Server server;
 
-    public WebAppServer(String installDir, LifeCycle.Listener serverListener)
-            throws Exception {
-        
+    public WebAppServer( String installDir, LifeCycle.Listener serverListener )
+        throws Exception
+    {
         int port;
-        try (Scanner scanner = new Scanner(new File(installDir + JETTY_PORT_CONF))) {
+        
+        try (Scanner scanner = new Scanner( new File( installDir + JETTY_PORT_CONF ) ))
+        {
             port = scanner.nextInt();
-            log.info("Loading DHIS 2 on port: " + port);
-        } catch (Exception ex) {
-            log.info("Couldn't load port number from " + installDir + JETTY_PORT_CONF);
+            log.info( "Loading DHIS 2 on port: " + port );
+        }
+        catch ( Exception ex )
+        {
+            log.info( "Couldn't load port number from " + installDir + JETTY_PORT_CONF );
             port = DEFAULT_JETTY_PORT;
-            log.info("Loading DHIS 2 on port: " + DEFAULT_JETTY_PORT);
+            log.info( "Loading DHIS 2 on port: " + DEFAULT_JETTY_PORT );
         }
 
-        server = new Server(port);
-        server.addLifeCycleListener(serverListener);
-        loadDHISContext(installDir + DHIS_DIR);
+        server = new Server( port );
+        server.addLifeCycleListener( serverListener );
+        loadDHISContext( installDir + DHIS_DIR );
     }
 
-    private void loadDHISContext(String webappPath) {
+    private void loadDHISContext( String webappPath )
+    {
         WebAppContext dhisWebApp = new WebAppContext();
-        dhisWebApp.setMaxFormContentSize(MAX_FORM_CONTENT_SIZE);
-        dhisWebApp.setWar(webappPath);
-        log.info("Setting DHIS 2 web app context to: " + webappPath);
+        dhisWebApp.setMaxFormContentSize( MAX_FORM_CONTENT_SIZE );
+        dhisWebApp.setWar( webappPath );
+        log.info( "Setting DHIS 2 web app context to: " + webappPath );
 
-        server.setHandler(dhisWebApp);
+        server.setHandler( dhisWebApp );
     }
 
     @Override
-    public void run() {
-        try {
-            log.debug("Server thread starting");
+    public void run()
+    {
+        try
+        {
+            log.debug( "Server thread starting" );
             server.start();
-            log.debug("Server thread exiting");
-        } catch (Exception ex) {
-            log.error("Server wouldn't start : " + ex);
+            log.debug( "Server thread exiting" );
+        }
+        catch ( Exception ex )
+        {
+            log.error( "Server wouldn't start : " + ex );
         }
     }
 
     public void shutdown()
-            throws Exception {
+        throws Exception
+    {
         server.stop();
     }
 
-    public URI getURI() {
+    public URI getURI()
+    {
         return server.getURI();
     }
 }
