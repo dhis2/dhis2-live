@@ -5,22 +5,10 @@ Creates an  executable jar which  contains jetty server classes  and a
 simple tray icon controller. 
 
 ```
-mvn package
+mvn clean package
 ```
 
 to build the jar and the exe file.  
-
-On Ubuntu (and other gnome-ish environments).  The java systemtray
-is not supported on fancy 3d enhanced window managers.  To work on
-ubuntu, first run:
-
-```
-metacity --replace
-```
-
-to get back to a vanilla WM.
-
-The application looks for a dhis2.home system property that is being set by the Live jar.
 
 The expected structure looks like this:
 
@@ -34,16 +22,22 @@ The expected structure looks like this:
 /webapps/dhis
 ```
 
-After that you are away.  The application will install an icon in your
-system tray or equivalent).  The icons are currently crap but they can
-be changed.  If the server is stopped you get a blue one.  While it is
-starting it is orange.  When its running it goes green.
+You can find the executable jar here:
 
-The h2 database is created in the db directory and log file in the log directory.
+```
+target/dhis2-live-jar-with-dependencies.jar
+```
 
-To exit - right click the icon and select Exit.
+You can rename the `dhis2-live-jar-with-dependencies.jar` file to `dhis2-live.jar` and place it under the appropriate folder.
 
-A sample `dhis.conf` configured for PostgreSQL looks like this:
+
+After that you are away. The application will install an icon in your
+system tray or equivalent. If the server is stopped you get a blue icon.
+While it is starting it is orange. When its running it goes green. To exit, 
+right click the icon and select Exit.
+
+A sample `dhis.conf` configured for PostgreSQL looks like the below. Note that you
+must install PostgreSQL yourself as the database is not provided by this package.
 
 ```
 # Hibernate SQL dialect

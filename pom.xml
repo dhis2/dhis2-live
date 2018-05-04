@@ -11,10 +11,6 @@
   
     <url>http://maven.apache.org</url>
   
-    <properties>
-        <jettyVersion>9.4.9.v20180320</jettyVersion>
-    </properties>
-  
     <repositories>
         <repository>
             <id>central</id>
@@ -43,10 +39,10 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                        <phase>package</phase> <!-- append to the packaging phase -->
+                        <id>make-assembly</id> <!-- This is used for inheritance merges -->
+                        <phase>package</phase> <!-- Append to the packaging phase -->
                         <goals>
-                            <goal>single</goal> <!-- goals == mojos -->
+                            <goal>single</goal> <!-- Goals equals mojos -->
                         </goals>
                     </execution>
                 </executions> 	
@@ -144,6 +140,8 @@
     </build>
   
     <dependencies>
+    
+        <!-- Jetty -->        
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
@@ -161,10 +159,22 @@
             <version>${jettyVersion}</version>
             <type>jar</type>
         </dependency>
+        
+        <!-- Servlet and JSP -->        
         <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>javax.servlet-api</artifactId>
           <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -183,5 +193,9 @@
             </exclusions>
         </dependency>
     </dependencies>
+  
+    <properties>
+        <jettyVersion>9.4.9.v20180320</jettyVersion>
+    </properties>
   
 </project>
