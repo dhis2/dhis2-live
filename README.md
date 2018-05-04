@@ -27,12 +27,12 @@ The expected structure looks like this:
 ```
 /dhis2-live.jar
 /startup.bat (optional)
-/conf /
+/conf/
 /conf/dhis.conf
 /database/
 /log/
-/webapps /
-/webapps / dhis
+/webapps/
+/webapps/dhis
 ```
 
 After that you are away.  The application will install an icon in your
