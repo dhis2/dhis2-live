@@ -162,6 +162,7 @@ public class TrayApp
     // -------------------------------------------------------------------------
     // Listener implementation
     // -------------------------------------------------------------------------
+    
     @Override
     public void lifeCycleFailure( LifeCycle arg0, Throwable arg1 )
     {

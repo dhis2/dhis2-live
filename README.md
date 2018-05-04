@@ -45,7 +45,7 @@ The h2 database is created in the db directory and log file in the log directory
 
 To exit - right click the icon and select Exit.
 
-A sample `hibernate.properties` configured for H2 looks like this:
+A sample `dhis.conf` configured for H2 looks like this:
 
 ```
 hibernate.dialect = org.hisp.dhis.dialect.H2Dialect
