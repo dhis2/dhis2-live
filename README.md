@@ -29,7 +29,6 @@ The expected structure looks like this:
 /startup.bat (optional)
 /conf/
 /conf/dhis.conf
-/database/
 /log/
 /webapps/
 /webapps/dhis
@@ -44,25 +43,28 @@ The h2 database is created in the db directory and log file in the log directory
 
 To exit - right click the icon and select Exit.
 
-A sample `dhis.conf` configured for H2 looks like this:
+A sample `dhis.conf` configured for PostgreSQL looks like this:
 
 ```
-hibernate.dialect = org.hisp.dhis.dialect.H2Dialect
-hibernate.connection.driver_class = org.h2.Driver
-hibernate.connection.url = jdbc:h2:./database/dhis2;AUTO_SERVER=TRUE
-hibernate.connection.username = sa
-hibernate.connection.password =
-hibernate.hbm2ddl.auto = update
+# Hibernate SQL dialect
+connection.dialect = org.hibernate.dialect.PostgreSQLDialect
+
+# JDBC driver class
+connection.driver_class = org.postgresql.Driver
+
+# Database connection URL
+connection.url = jdbc:postgresql:dev
+
+# Database username
+connection.username = dhis
+
+# Database password
+connection.password = dhis
+
+# Database schema behavior, can be validate, update, create, create-drop
+connection.schema = update
 ```
 
 The default port that the embedded jetty server listens on is `8080`.  If this
 clashes with other services on your system it can be reconfigured by creating a
 file `conf/jetty.port` which contains simply the desired server port, eg `8888`.
-
-
-TODO 
-1.  make a nice "instrument panel" showing application status when you
-click on the tray icon
-postgres and h2, though the latter (and JavaDB) is targeted.
-2.  make richer configuration of jetty through `web.xml` or similar
-
