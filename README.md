@@ -20,6 +20,8 @@ The expected file structure looks like this:
 /webapps/dhis
 ```
 
+The `dhis` folder should contain the uncompressed WAR file. This implies that you can update your Live package with a later DHIS 2 version by deleting the `dhis` folder, placing the latest `dhis.war` file under `webapps` and uncompressing it.
+
 You can find the executable jar here:
 
 ```
