@@ -25,15 +25,14 @@ The application looks for a dhis2.home system property that is being set by the 
 The expected structure looks like this:
 
 ```
-/ dhis2-live.jar
-/ startup.bat (optional)
-/ conf /
-/ conf / hibernate.properties
-/ database /
-/ log /
-/ webapps /
-/ webapps / dhis
-/ webapps / birt (optional)
+/dhis2-live.jar
+/startup.bat (optional)
+/conf /
+/conf/dhis.conf
+/database/
+/log/
+/webapps /
+/webapps / dhis
 ```
 
 After that you are away.  The application will install an icon in your
