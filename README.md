@@ -1,16 +1,14 @@
-# dhis2-live
-DHIS 2 Live package
+# DHIS 2 Live
 
-Creates an  executable jar which  contains jetty server classes  and a
-simple tray icon controller. 
+DHIS 2 Live package. Creates an executable jar which contains jetty server classe
+and a simple tray icon controller. Build the JAR and executable file with the
+following command:
 
 ```
 mvn clean package
 ```
 
-to build the jar and the exe file.  
-
-The expected structure looks like this:
+The expected file structure looks like this:
 
 ```
 /dhis2-live.jar
