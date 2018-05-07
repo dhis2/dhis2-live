@@ -25,13 +25,14 @@ Now, create a new folder at some location you prefer. It doesn't have to be insi
 
 The `dhis` folder should contain the uncompressed WAR file. This implies that you can update your Live package with a later DHIS 2 version by deleting the `dhis` folder, placing the latest `dhis.war` file under `webapps` and uncompressing it.
 
-You can find the executable jar here:
+You can find the executable jar and exe files here:
 
 ```
 target/dhis2-live-jar-with-dependencies.jar
+target/dhis2-live.exe
 ```
 
-You can rename the `dhis2-live-jar-with-dependencies.jar` file to `dhis2-live.jar` and place it under the appropriate folder.
+You can rename the `dhis2-live-jar-with-dependencies.jar` file to `dhis2-live.jar` and place it under the appropriate folder. Do the same with the .exe file.
 
 `dhis.conf` file should have the same settings as regular DHIS2 installation has. For example, look on the bottom of this Readme file.
 
