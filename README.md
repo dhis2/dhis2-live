@@ -25,7 +25,7 @@ Now, create a new folder at some location of your preference. It doesn't have to
 /webapps/dhis
 ```
 ### Upgrading DHIS2 version
-The `/webapps/dhis` folder should contain the uncompressed WAR file. This implies that you can update your Live package with a later DHIS 2 version by deleting the `dhis` folder, placing the latest `dhis.war` file under `webapps` and uncompressing it.
+The `/webapps/dhis` folder should contain the uncompressed WAR file. This implies that you can update your Live package with a later DHIS 2 version by deleting the `/webapps/dhis` folder, placing the latest `dhis.war` file under `webapps` and decompressing it. This should create a new `dhis` folder within the `webapps` folder and the created folder should contain the decompressed files from the .war file.
 
 ### Getting executable .jar files at the correct location
 You can find the executable jar and exe files here:
